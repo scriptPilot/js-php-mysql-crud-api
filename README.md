@@ -73,3 +73,7 @@ According to the [Database Authentication](https://github.com/mevdschee/php-crud
 - `login(username, password)`
 - `password(username, password, newPassword)`
 - `logout()`
+
+Request function for [Custom Controller](https://github.com/mevdschee/php-crud-api#custom-controller):
+
+- `request(path, options = {})`
