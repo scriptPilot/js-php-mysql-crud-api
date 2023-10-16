@@ -52,6 +52,18 @@ create table tableName (
 </html>
 ```
 
+If you use [NPM] as package manager it is even more simpler:
+
+```bash
+npm install js-php-mysql-crud-api
+```
+
+```js
+import api from 'js-php-mysql-crud-api'
+
+...
+```
+
 ## Methods
 
 Change the API endpoint if required (default `/api.php`):
