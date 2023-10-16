@@ -10,59 +10,59 @@ This is a minimal JavaScript wrapper for the incredible [PHP CRUD API](https://g
 
 3. Create a MySQL table:
 
-    ```sql
-    create table tableName (
-      id int(4) not null auto_increment,
-      title varchar(32),
-      primary key (id)
-    );
-    ```
+```sql
+create table tableName (
+  id int(4) not null auto_increment,
+  title varchar(32),
+  primary key (id)
+);
+```
 
 4. Load the API Wrapper and use the methods:
 
-    ```html
-    <html>
-      <body>
-    
-        <!-- Use script tag with type = module -->
-        <script type="module">
-    
-          // Import API to your script
-          import api from './js-php-mysql-crud-api.js'    
-    
-          // Use the API methods
-          (async () => {
-    
-            // Add some records to the table
-            await api.create('tableName', { title: 'First' })
-            await api.create('tableName', { title: 'Second' })        
-            await api.create('tableName', { title: 'Third' })
-    
-            // Retrieve a list of all records
-            const records = await api.list('tableName')
-    
-            // Log them to the console
-            console.log(records)
-    
-          })()
-    
-        </script>
-    
-      </body>
-    </html>
-    ```
+```html
+<html>
+  <body>
 
-**If you use [NPM](https://www.npmjs.com/package/js-php-mysql-crud-api) as a package manager it is even more simpler:**
+    <!-- Use script tag with type = module -->
+    <script type="module">
 
-    ```bash
-    npm install js-php-mysql-crud-api
-    ```
-    
-    ```js
-    import api from 'js-php-mysql-crud-api'
-    
-    ...
-    ```
+      // Import API to your script
+      import api from './js-php-mysql-crud-api.js'    
+
+      // Use the API methods
+      (async () => {
+
+        // Add some records to the table
+        await api.create('tableName', { title: 'First' })
+        await api.create('tableName', { title: 'Second' })        
+        await api.create('tableName', { title: 'Third' })
+
+        // Retrieve a list of all records
+        const records = await api.list('tableName')
+
+        // Log them to the console
+        console.log(records)
+
+      })()
+
+    </script>
+
+  </body>
+</html>
+```
+
+If you use [NPM](https://www.npmjs.com/package/js-php-mysql-crud-api) as a package manager it is even more simpler:
+
+```bash
+npm install js-php-mysql-crud-api
+```
+
+```js
+import api from 'js-php-mysql-crud-api'
+
+...
+```
 
 ## Methods
 
