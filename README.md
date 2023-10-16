@@ -52,7 +52,7 @@ create table tableName (
 </html>
 ```
 
-If you use [NPM](https://www.npmjs.com/package/js-php-mysql-crud-api) as package manager it is even more simpler:
+**If you use [NPM](https://www.npmjs.com/package/js-php-mysql-crud-api) as package manager it is even more simpler:**
 
 ```bash
 npm install js-php-mysql-crud-api
