@@ -60,7 +60,7 @@ Change the API endpoint if required (default `/api.php`):
 
 According to the [CRUD + List](https://github.com/mevdschee/php-crud-api#crud--list) operations:
 
-- `create(table, item)`
+- `create(table, item)`        
 - `read(table, key)`
 - `update(table, key, item)`
 - `delete(table, key)`
@@ -69,7 +69,7 @@ According to the [CRUD + List](https://github.com/mevdschee/php-crud-api#crud--l
 According to the [Database Authentication](https://github.com/mevdschee/php-crud-api#database-authentication) operations:
 
 - `me()`
-- `register(username, password)`
+- `register(username, password)`   
 - `login(username, password)`
 - `password(username, password, newPassword)`
 - `logout()`
