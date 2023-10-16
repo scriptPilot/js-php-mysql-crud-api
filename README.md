@@ -8,12 +8,21 @@ This is a minimal JavaScript wrapper for the incredible [PHP CRUD API](https://g
 
 2. Add the [js-php-mysql-crud-api.js](./js-php-mysql-crud-api.js) file to your project.
 
-3. Create a MySQL table:
+3. Create MySQL tables:
 
 ```sql
+# For CRUD + List
 create table tableName (
   id int(4) not null auto_increment,
   title varchar(32),
+  primary key (id)
+);
+
+# For Database Authentication
+create table users (
+  id int(4) not null auto_increment,
+  username varchar(30) not null,
+  password varchar(60) not null,
   primary key (id)
 );
 ```
