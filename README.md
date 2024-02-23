@@ -27,7 +27,9 @@ This is a minimal JavaScript wrapper for the incredible [PHP CRUD API](https://g
 ## Usage
 
 ```js
-import api from 'js-php-mysql-crud-api'
+import useAPI from 'js-php-mysql-crud-api'
+
+const api = useAPI()
 
 (async () => {
 
