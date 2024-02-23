@@ -1,8 +1,8 @@
 export default function useAPI(endpoint = '/api.php') {
-  return {
+  const api = {
     endpoint,
     setEndpoint(endpoint) {
-      this.endpoint = endpoint
+      api.endpoint = endpoint
     },
     request(path, options = {}) {
       path = (path.substr(0, 1) !== '/' ? '/' : '') + path
@@ -12,7 +12,7 @@ export default function useAPI(endpoint = '/api.php') {
       options.credentials = 'include'    
       return new Promise(async (resolve, reject) => {
         try {
-          const resp = await fetch(this.endpoint + path, options) 
+          const resp = await fetch(api.endpoint + path, options) 
           if (resp.status === 200 || resp.ok) {
             const json = await resp.json()
             resolve(json.records || json)
@@ -25,34 +25,35 @@ export default function useAPI(endpoint = '/api.php') {
       })
     },
     create(table, item) {
-      return this.request(`records/${table}`, { method: 'post', body: item })
+      return api.request(`records/${table}`, { method: 'post', body: item })
     },
     read(table, key) {
-      return this.request(`records/${table}/${key}`)
+      return api.request(`records/${table}/${key}`)
     },
     update(table, key, item) {
-      return this.request(`records/${table}/${key}`, { method: 'put', body: item })
+      return api.request(`records/${table}/${key}`, { method: 'put', body: item })
     },
     delete(table, key) {
-      return this.request(`records/${table}/${key}`, { method: 'delete' })
+      return api.request(`records/${table}/${key}`, { method: 'delete' })
     },
     list(path) {
-      return this.request('records/' + path)
+      return api.request('records/' + path)
     },
     me() {
-      return this.request('me')
+      return api.request('me')
     },
     register(username, password) {
-      return this.request('register', { method: 'post', body: { username, password } })
+      return api.request('register', { method: 'post', body: { username, password } })
     },
     login(username, password) {
-      return this.request('login', { method: 'post', body: { username, password } })
+      return api.request('login', { method: 'post', body: { username, password } })
     },
     password(username, password, newPassword) {
-      return this.request('password', { method: 'post', body: { username, password, newPassword } })
+      return api.request('password', { method: 'post', body: { username, password, newPassword } })
     },
     logout() {
-      return this.request('logout', { method: 'post' })
+      return api.request('logout', { method: 'post' })
     }
   }
+  return api
 }
