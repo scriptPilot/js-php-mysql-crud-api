@@ -1,14 +1,15 @@
 {
   "name": "js-php-mysql-crud-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
     "name": "ScriptPilot",
-    "email": "mail@scriptpilot.de"
+    "email": "mail@scriptPilot.de"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/scriptPilot/js-php-mysql-crud-api.git"
   },
   "license": "MIT",
-  "main": "js-php-mysql-crud-api.js"
+  "main": "src/index.js",
+  "type": "module"
 }

@@ -2,75 +2,47 @@
 
 This is a minimal JavaScript wrapper for the incredible [PHP CRUD API](https://github.com/mevdschee/php-crud-api) by Maurits van der Schee.
 
+## Installation
+
+1. Install [Docker](https://www.docker.com/) and [Node.js](https://nodejs.org/)
+
+2. Create a new app project:
+
+    ```bash
+    npm create vite
+    ```
+
+3. Add a PHP backend:
+
+    ```bash
+    npx add-php-backend
+    ```
+    
+4. Install this module:
+
+    ```bash
+    npm install js-php-mysql-crud-api
+    ```
+
 ## Usage
-
-1. Install and configure the [PHP CRUD API Script](https://github.com/mevdschee/php-crud-api#installation).
-
-2. Add the [js-php-mysql-crud-api.js](./js-php-mysql-crud-api.js) file to your project.
-
-3. Create MySQL tables:
-
-```sql
-# For CRUD + List
-create table tableName (
-  id int(4) not null auto_increment,
-  title varchar(32),
-  primary key (id)
-);
-
-# For Database Authentication
-create table users (
-  id int(4) not null auto_increment,
-  username varchar(30) not null,
-  password varchar(60) not null,
-  primary key (id)
-);
-```
-
-4. Load the API Wrapper and use the methods:
-
-```html
-<html>
-  <body>
-
-    <!-- Use script tag with type = module -->
-    <script type="module">
-
-      // Import API to your script
-      import api from './js-php-mysql-crud-api.js'    
-
-      // Use the API methods
-      (async () => {
-
-        // Add some records to the table
-        await api.create('tableName', { title: 'First' })
-        await api.create('tableName', { title: 'Second' })        
-        await api.create('tableName', { title: 'Third' })
-
-        // Retrieve a list of all records
-        const records = await api.list('tableName')
-
-        // Log them to the console
-        console.log(records)
-
-      })()
-
-    </script>
-
-  </body>
-</html>
-```
-
-If you use [NPM](https://www.npmjs.com/package/js-php-mysql-crud-api) as a package manager it is even more simpler:
-
-```bash
-npm install js-php-mysql-crud-api
-```
 
 ```js
 import api from 'js-php-mysql-crud-api'
 
-...
+(async () => {
+
+  // Add some records to the table
+  await api.create('tasks', { title: 'First' })
+  await api.create('tasks', { title: 'Second' })        
+  await api.create('tasks', { title: 'Third' })
+
+  // Retrieve a list of all records
+  const records = await api.list('tasks')
+
+  // Log them to the console
+  console.log(records)
+
+})()
 ```
 
 ## Methods
