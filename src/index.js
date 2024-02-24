@@ -13,13 +13,23 @@ export default function useAPI(endpoint = '/api.php') {
       return new Promise(async (resolve, reject) => {
         try {
           const resp = await fetch(api.endpoint + path, options) 
+          const text = await resp.text()
           if (resp.status === 200 || resp.ok) {
-            const json = await resp.json()
-            resolve(json.records || json)
+            try {
+              const json = JSON.parse(text)
+              resolve(json.records || json)
+            } catch (err) {
+              reject({ code: err.code || -1, message: err.message, text })
+            }
           } else {
-            reject({ code: resp.status, message: resp.statusText })
+            try {
+              const json = JSON.parse(text)
+              reject({ code: json.code, message: json.message })
+            } catch (err) {
+              reject({ code: resp.status, message: resp.statusText, text })
+            }
           }
-        } catch (err) {       
+        } catch (err) {   
           reject({ code: err.code || -1, message: err.message })
         }
       })
