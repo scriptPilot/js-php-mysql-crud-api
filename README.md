@@ -2,6 +2,8 @@
 
 This is a minimal JavaScript wrapper for the incredible [PHP CRUD API](https://github.com/mevdschee/php-crud-api) by Maurits van der Schee.
 
+💡 This wrapper is used and extended as [Local Persistent Database + MySQL Sync](https://github.com/scriptPilot/pouchdb-mysql/).
+
 ## Installation
 
 1. Install [Docker](https://www.docker.com/) and [Node.js](https://nodejs.org/)
@@ -12,7 +14,7 @@ This is a minimal JavaScript wrapper for the incredible [PHP CRUD API](https://g
     npm create vite
     ```
 
-3. Add a PHP backend:
+3. Add a [PHP backend](https://github.com/scriptPilot/add-php-backend)
 
     ```bash
     npx add-php-backend
