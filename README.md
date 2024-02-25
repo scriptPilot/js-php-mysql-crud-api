@@ -1,8 +1,8 @@
-> ⚠️ Deprecated - You can use https://github.com/thipages/js-crud-api
-
 # JavaScript PHP MySQL CRUD API
 
 This is a minimal JavaScript wrapper for the incredible [PHP CRUD API](https://github.com/mevdschee/php-crud-api) by Maurits van der Schee.
+
+**🚨 No more maintenance - you can use https://github.com/thipages/js-crud-api**
 
 ## Installation
 
